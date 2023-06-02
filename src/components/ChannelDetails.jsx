@@ -5,31 +5,29 @@ import { fetchFromAPI } from '../utils/fetchFromAPI';
 import {ChannelCard, Videos} from './index';
 const ChannelDetails = () => {
   
-  const channelId=useParams().id;
+  const {id}=useParams();
   const [channelDetail,setChannelDetail]=useState([]);
   const [videos,setVideos]=useState([]);
-  console.log(channelId)
+  console.log(id)
   useEffect(()=>{
-    fetchFromAPI(`channels?part=snippet&id=${channelId}`)
+    fetchFromAPI(`channels?part=snippet&id=${id}`)
     .then((data) => setChannelDetail(data.items[0]));
 
-    fetchFromAPI(`search?part=id,snippet&channelId=${channelId}&order=date`)
+    fetchFromAPI(`search?part=id,snippet&channelId=${id}&order=date`)
     .then((data) => setVideos(data.items))
      
-  },[channelId])
+  },[id])
     
   console.log(channelDetail)
   if(!channelDetail || !videos)
   return('Loading')
   
-  // const {snippet,statistics:{subscriberCount
-  //    ,videoCount}}=channelDetails;
   return (
     <Stack>
            <Box>
           <div style={{background: 'rgb(87,99,101)',background: 'linear-gradient(90deg, rgba(87,99,101,1) 0%, rgba(226,45,100,1) 35%, rgba(227,225,46,1) 100%)',height:'34vh'}}></div>  
           <Box  sx={{display:'flex',alignItems:'center',justifyContent:'center'}} >
-            <ChannelCard channel={channelDetail} marginTop='-120px'/> 
+            <ChannelCard channel={channelDetail} id={id} marginTop='-120px'/> 
           </Box>
                     
          </Box>
