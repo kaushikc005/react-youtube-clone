@@ -8,9 +8,11 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
       flexDirection:{md:'column'},
       overflowY:'scroll',
       height:{sx:'auto',md:'95%'},
-      minWidth:{md:'10vw'},
-      maxWidth:{md:'10vw'}
+      minWidth:{md:'12vw'},
+      maxWidth:{md:'12vw'},
+      width:{xs:"90vw"}
      }}
+     className="disable-scrollbars"
     >
       {categories.map((item) => (
         <Box

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Stack, Box, IconButton, Paper } from "@mui/material";
+import { Box, IconButton, Paper } from "@mui/material";
 import { Search } from "@mui/icons-material";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Searchbar = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -23,12 +23,12 @@ const Searchbar = () => {
         component="form"
         onSubmit={handleSubmit}
         sx={{
-          width: { sm: "200px", md: "400px" },
+          width: {xs:"160px", sm: "200px", md: "400px" },
           background: "#fff",
           padding: {xs:0,md:"5px"},
           display: "flex",
           borderRadius: "25px",
-          marginRight: {sm:0,md:"1.75rem"},
+          marginRight: {md:"1.75rem"},
         }}
       >
         <input

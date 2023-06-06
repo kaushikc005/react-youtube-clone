@@ -1,12 +1,18 @@
-import React,{useState} from "react";
+import React from "react";
 import { Typography, Box, CardMedia, CardContent } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+import {
+  demoChannelTitle,
+  demoProfilePicture,
+} from "../utils/constants";
 const ChannelCard = ({ channel,id, marginTop }) => {
-  if (!channel) console.log("Loading....");
+  if (!id) return <></>
   return (
-    <Box
+    <>
+    {channel &&
+    (<Box
       sx={{
         display: "flex",
         alignItems: "center",
@@ -31,7 +37,7 @@ const ChannelCard = ({ channel,id, marginTop }) => {
         >
             <CardMedia
               component="div"
-              image={channel?.snippet?.thumbnails?.high?.url}
+              image={channel?.snippet?.thumbnails?.high?.url || demoProfilePicture}
               sx={{ height: 180, width: "180px", borderRadius: "50%" }}
             />
           <Typography
@@ -44,12 +50,12 @@ const ChannelCard = ({ channel,id, marginTop }) => {
               fontWeight: "600",
             }}
           >
-            {channel?.snippet?.title.slice(0, 50)}
+            {channel?.snippet?.title.slice(0, 50) || demoChannelTitle}
             <CheckCircle
               sx={{ fontSize: "20px", color: "#fff", marginLeft: "10px" }}
             ></CheckCircle>
           </Typography>
-          <Typography
+          {channel?.statistics?.subscriberCount &&<Typography
             variant="subtitle2"
             sx={{
               display: "flex",
@@ -58,14 +64,16 @@ const ChannelCard = ({ channel,id, marginTop }) => {
               fontWeight: "600",
             }}
           >
-            {parseInt(channel?.statistics?.subscriberCount).toLocaleString(
+            
+             {parseInt(channel?.statistics?.subscriberCount).toLocaleString(
               "en-US"
-            )}{" "}
-            Subscribers
-          </Typography>
+            )}{"  "}Subscribers
+            
+          </Typography>}
         </CardContent>
       </Link>
-    </Box>
+    </Box>)}
+    </>
   );
 };
 

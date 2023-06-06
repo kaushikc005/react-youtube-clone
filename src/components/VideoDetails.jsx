@@ -27,10 +27,14 @@ const VideoDetails = () => {
   
   useEffect(()=>{
     function handleResize() {
-      if(window.innerWidth>820)
-       console.log(window.innerWidth)
+      if(window.innerWidth>768){
+        setShowComments(true)
+        console.log(window.innerWidth)
+      }
+       
     }
     window.addEventListener('resize', handleResize);
+    handleResize()
     return () => window.removeEventListener('resize', handleResize);
   },[])
   console.log(videoDetails);
@@ -51,6 +55,7 @@ const VideoDetails = () => {
         alignItems: { xs: "center" },
         flexDirection: { xs: "column", md: "row" },
       }}
+      className="videoPlay"
     >
       <Box
         sx={{
@@ -149,7 +154,7 @@ const VideoDetails = () => {
               }}
               onClick={() => setShowComments((prev) => !prev)}
             >
-              Comments
+              Comments {window.innerWidth<768?"(Click to Show/Hide)":''}
             </Typography>
             <hr />
             {showComments &&

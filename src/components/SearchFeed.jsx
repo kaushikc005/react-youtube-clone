@@ -1,7 +1,7 @@
 import { Box, Stack, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import {Navbar, Sidebar, Videos} from './index'
+import { Videos} from './index'
 import { fetchFromAPI } from '../utils/fetchFromAPI';
 
 const SearchFeed = () => {
@@ -25,7 +25,7 @@ const SearchFeed = () => {
     <Stack direction='row'>
     
        <Box sx={{height:'95vh'}}>
-       <Typography variant='h3' sx={{color:'#fff',marginLeft:'10px',fontWeight:'BOLD',
+       <Typography variant='h3' sx={{color:'#fff',fontWeight:'BOLD',
       marginLeft:'5%',marginBottom:'10px'}}>
         Search results for :
        <span style={{color:'#FC1503'}}> {searchTerm}</span>

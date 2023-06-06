@@ -8,3 +8,4 @@ export {default as VideoDetails} from './VideoDetails';
 export {default as ChannelDetails} from './ChannelDetails';
 export {default as VideoCard} from './VideoCard';
 export {default as ChannelCard} from './ChannelCard';
+export {default as  PlayListCard} from "./PlayListCard";

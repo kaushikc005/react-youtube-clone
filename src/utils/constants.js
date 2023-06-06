@@ -35,8 +35,8 @@ export const categories = [
 ];
 
 export const demoThumbnailUrl = 'demo_thumbnail.png';
-export const demoChannelUrl = '/channel/UCBR8-60-B28hp2BmDPdntcQ';
-export const demoVideoUrl = '/video/jNQXAC9IVRw';
+export const demoChannelId = 'UCBR8-60-B28hp2BmDPdntcQ';
+export const demoVideoId = 'jNQXAC9IVRw';
 export const demoChannelTitle = 'Youtube';
 export const demoVideoTitle = 'Youtube Video';
 export const demoProfilePicture = 'http://dergipark.org.tr/assets/app/images/buddy_sample.png'
