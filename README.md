@@ -2,6 +2,21 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Youtube Clone
+The project is a Youtube clone made using ReactJS and Restful API from RapidAPI.
+
+- This project consists of almost all the minimal features of Youtube such as Video Playing,Video Searching,Channel Info,Playlists etc.
+- The Youtube clone gets all the information from the [Youtube v3 API](https://rapidapi.com/ytdlfree/api/youtube-v31)
+
+## Features
+
+- Responsive
+- Fullscreen mode
+- Cross platform
+
+
+## Live: https://react-youtube-clone1.vercel.app/
+
 ## Available Scripts
 
 In the project directory, you can run:
